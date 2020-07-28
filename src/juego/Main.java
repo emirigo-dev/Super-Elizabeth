@@ -1,10 +1,12 @@
 package juego;
 
 
+import java.awt.Color;
+
 import entorno.Entorno;
 import entorno.InterfaceJuego;
 
-public class Juego extends InterfaceJuego
+public class Main extends InterfaceJuego
 {
 	// El objeto Entorno que controla el tiempo y otros
 	private Entorno entorno;
@@ -12,7 +14,7 @@ public class Juego extends InterfaceJuego
 	// Variables y métodos propios de cada grupo
 	// ...
 	
-	Juego()
+	Main()
 	{
 		// Inicializa el objeto entorno
 		this.entorno = new Entorno(this, "Super Elizabeth Sis - Grupo ... - v1", 800, 600);
@@ -32,6 +34,8 @@ public class Juego extends InterfaceJuego
 	 */
 	public void tick()
 	{
+		entorno.dibujarRectangulo(400, 550, 800, 100, 0, Color.RED);
+		
 		// Procesamiento de un instante de tiempo
 		// ...
 		
@@ -39,9 +43,8 @@ public class Juego extends InterfaceJuego
 	}
 	
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args)
 	{
-		Juego juego = new Juego();
+		Main juego = new Main();
 	}
 }
