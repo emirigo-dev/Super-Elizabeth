@@ -10,6 +10,8 @@ public class Main extends InterfaceJuego
 {
 	// El objeto Entorno que controla el tiempo y otros
 	private Entorno entorno;
+	private Princesa princesa;
+	private Soldado soldado;
 	
 	// Variables y métodos propios de cada grupo
 	// ...
@@ -18,9 +20,10 @@ public class Main extends InterfaceJuego
 	{
 		// Inicializa el objeto entorno
 		this.entorno = new Entorno(this, "Super Elizabeth Sis - Grupo ... - v1", 800, 600);
-		
+		this.princesa = new Princesa (100, 425);
 		// Inicializar lo que haga falta para el juego
 		// ...
+		this.soldado = new Soldado (400, 300);
 
 		// Inicia el juego!
 		this.entorno.iniciar();
@@ -34,8 +37,9 @@ public class Main extends InterfaceJuego
 	 */
 	public void tick()
 	{
-		entorno.dibujarRectangulo(400, 550, 800, 100, 0, Color.RED);
 		
+		entorno.dibujarRectangulo(princesa.getX(), princesa.getY(), princesa.getAncho(), princesa.getAltura(), 0, Color.GREEN);
+		entorno.dibujarRectangulo(400, 550, 850, 150, 0, Color.RED);
 		// Procesamiento de un instante de tiempo
 		// ...
 		
