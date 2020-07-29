@@ -15,12 +15,21 @@ public class Main extends InterfaceJuego
 	
 	// Variables y métodos propios de cada grupo
 	// ...
+	public void movimiento() {
+		if (entorno.estaPresionada(entorno.TECLA_DERECHA)) {
+			princesa.caminarDerecha();
+		}
+		if (entorno.estaPresionada(entorno.TECLA_IZQUIERDA)) {
+			princesa.caminarIzquierda();
+		}
+	
+	}
 	
 	Main()
 	{
 		// Inicializa el objeto entorno
 		this.entorno = new Entorno(this, "Super Elizabeth Sis - Grupo ... - v1", 800, 600);
-		this.princesa = new Princesa (100, 425);
+		this.princesa = new Princesa (100, 450);
 		// Inicializar lo que haga falta para el juego
 		// ...
 		this.soldado = new Soldado (400, 300);
@@ -39,7 +48,9 @@ public class Main extends InterfaceJuego
 	{
 		
 		entorno.dibujarRectangulo(princesa.getX(), princesa.getY(), princesa.getAncho(), princesa.getAltura(), 0, Color.GREEN);
-		entorno.dibujarRectangulo(400, 550, 850, 150, 0, Color.RED);
+		entorno.dibujarRectangulo(400, 550, 850, 100, 0, Color.RED);
+		movimiento();
+		
 		// Procesamiento de un instante de tiempo
 		// ...
 		
