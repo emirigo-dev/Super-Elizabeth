@@ -52,5 +52,16 @@ public class Princesa {
 	public void caminarIzquierda() {
 		this.x--;
 	}
-
+	
+	public boolean estaEnPlataforma() {
+		if (this.y + this.altura/2 == 650) {
+			return true;
+		}
+		return false;
+	}
+	public void volverPlataforma() {
+		while (!estaEnPlataforma()) {
+			this.y --;
+		}
+	}
 }
